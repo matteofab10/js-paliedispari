@@ -1,13 +1,12 @@
 const str = prompt('Inserisci una parola');
 
-function palindrome(str) {
-  var re = /[^A-Za-z0-9]/g;
-  str = str.toLowerCase().replace(re, '');
-  var len = str.length;
-  for (var i = 0; i < len/2; i++) {
-    if (str[i] !== str[len - 1 - i]) {
-        return false;
+const isPalindrome = (inStr) => {
+  for (let i=0; i < inStr.length; i++) {
+    if (inStr[i] !== inStr[inStr.length - 1 - i]) {
+      return 'is not palindrome';
     }
   }
-  return true;
- }
+  return 'is palindrome';
+}
+
+console.log(isPalindrome(str));
